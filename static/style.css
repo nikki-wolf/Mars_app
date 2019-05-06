@@ -1,0 +1,246 @@
+.bodyBGC{
+  color: #333;
+  background: #bd261b;
+  font-family: 'Orbitron', sans-serif
+}
+.box{
+  padding: 10px;
+  background: #bd261b;
+  margin-top:50px;
+  margin-left:5px;
+  margin-right:5px;
+  margin-bottom:20px;
+  align-content: center;
+}
+.container-fluid .navbar-brand{
+  color: #333;
+  height: 60px;
+  padding: 20px;
+  font-weight: bold;
+  font-size: 180%;
+  background:  #bd261b;
+}
+.whiteback{
+    background-color: #bd261b;
+}
+.navbar {
+    margin-right: 0px;
+    margin-left: 0px;
+    padding: 25px;
+    background: #bd261b;
+  }
+  
+.navbar li {
+    margin-right: 0px;
+    margin-left: 0px;
+    display: d-block;
+    padding: 10px;
+    cursor: pointer;
+  }
+#summary_text{
+    background-color: #bd261b;
+}
+.summary_photo{
+  /* float: left; */
+  width: 100%;
+  /* height: 480px; */
+  /* margin-top: 10px; */
+  /* margin-right: 10px; */ 
+  object-fit: cover;
+}
+
+ul#hlist {
+	min-width: 696px;
+	list-style: none;
+	padding-top: 20px;
+	}
+ul#hhlist li {
+    display: inline;
+}
+    
+.photos {
+  padding-top: 40px;
+  text-align: center;
+  width: 100%;
+  margin-left:10px;
+  /* height: 180px; */
+  
+}
+.photos:hover{
+    border: 3px solid #360905;
+}
+
+.compphotos {
+    /* padding-top: 40px;
+    text-align: center;
+    width: 100%;
+    margin-left:10px; */
+    height:50px;
+    width:50px;
+    /* height: 180px; */
+  }
+.compphotos:hover{
+      border: 3px solid #333;
+  }
+
+.phnohover {
+  padding-top: 40px;
+  text-align: right;
+  padding-left:10px;
+  width: 100%;
+  /* height: 180px; */
+}
+
+h3 {
+    color: #0a0a0a;
+    font-weight: bold;
+    text-align: center;
+}
+h4 {
+    color: #810f65;
+    font-weight: bold;
+    text-align: center;
+  }
+
+h6 {
+    color: #0c0101;
+    font-weight: normal;
+    text-align: left;
+  }
+
+p {
+    text-align: left;
+    font-size: 20px;
+    font-weight: normal;
+    color: black;
+    /* font-family:'Lucida Grande'; */
+}
+
+.summary_RBI{
+    position: relative;
+    height: 350px;
+    width: 385px;
+    align-content: center;
+}
+
+.striped-border {
+  border: 1px dashed #000;
+  width: 50%;
+  margin: auto;
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+
+.button {
+    background-color:  #85605d; 
+    color: black;
+    cursor: pointer;
+}
+
+img {
+  padding-top: 10px;
+  padding-right: 20px;
+  padding-bottom: 10px;
+  padding-left: 20px;
+}
+
+
+.navbar {
+  padding: 10px;
+  background: #645655;
+}
+
+.navbar li {
+  display: inline-block;
+  padding: 20px;
+  margin-right: 10px;
+  margin-left: 10px;
+  cursor: pointer;
+  background:#66140f;
+  border-radius: 3px;
+}
+
+.navbar li a {
+  color: #000;
+  text-decoration: none;
+}
+
+/* Styling the header, giving it a height, a background color, and some top padding */
+.header {
+  height: 200px;
+  padding-top: 20px;
+  background: #bd261b;
+}
+
+/* Centering our h1 tag inside our header, giving it a little padding, removing its margin */
+.header h1 {
+  padding: 60px;
+  margin: 0;
+  color: #000;
+  text-align: center;
+}
+
+/* Giving the .post element margin on 3 sides */
+.post {
+  margin-top: 50px;
+  margin-right: 100px;
+  margin-left: 100px;
+}
+
+#nav-select {
+  visibility: hidden;
+}
+
+footer{
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 20px;
+  background-color: rgb(36, 36, 34);
+}
+
+.footer p{
+  color: white;
+  font-size: 14px}
+
+.image_data{
+    visibility: hidden;
+}
+/* Adding media queries to show the drop-down, and hide the navbar when the screen is smaller than 480 pixels */
+@media (max-width: 480px) {
+  .navbar li {
+    padding: 10px;
+  }
+
+  .post {
+    margin-right: 30px;
+    margin-left: 30px;
+  }
+
+  .navbar ul {
+    visibility: hidden;
+  }
+
+  #nav-select {
+    visibility: visible;
+  }
+}
+
+@media (min-width: 480px) {
+    .image_data{
+        visibility: visible;
+    }
+}
+
+.weather-box {
+    border-style: solid;
+    border-width: 2px;
+    border-color: black;
+}
+
+/* Data Column For Mobile Phone: */
+@media only screen and (max-width: 768px) {
+    [class*="col"] {
+        width: 100%;
+    }
+}
