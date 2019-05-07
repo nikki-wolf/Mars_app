@@ -6,15 +6,13 @@ import pandas as pd
 import requests
 import time
 
-#setting up browser parser
-executable_path = {"executable_path": "chromedriver"}
-options=Options()
-options.add_argument('--ignore-certificate-errors')
-browser = Browser("chrome", **executable_path, headless=False,chrome_options=options)
-
 def init_browser():
+    #setting up browser parser
     executable_path = {"executable_path": "chromedriver"}
-    return Browser("chrome", **executable_path, headless=False)
+    options=Options()
+    options.add_argument('--ignore-certificate-errors')
+    browser = Browser("chrome", **executable_path, headless=False,chrome_options=options)
+    return browser
 
 # Step 1 - Scraping:
 def scrape():
