@@ -21,13 +21,19 @@ else:
 # create instance of Flask app
 app = Flask(__name__)
 
-#mongo = PyMongo(app, uri="mongodb://localhost:27017/Mars_app")
+
 
 # create route that renders index.html template
 @app.route("/")
 def index():
     mars_collection_values=collection.find_one()
     return render_template("index.html",Mars = mars_collection_values)
+
+mars_collection_values=collection.find_one()
+Mars_hem_img = mars_collection_values['MARS_HEMISPHERES_IMG']
+print(Mars_hem_img)
+for item in Mars_hem_img:
+    print(item['title'])
 
 @app.route('/scrape')
 def scrape():
@@ -55,6 +61,11 @@ def news():
 def weather():
     mars_collection_values=collection.find_one()
     return render_template("Mars_weather.html",Mars = mars_collection_values)
+
+@app.route('/Mars_hemispheres')
+def hemispheres():
+    mars_collection_values=collection.find_one()
+    return render_template("Mars_hemispheres.html",Mars_hem_img = mars_collection_values['MARS_HEMISPHERES_IMG'])
 
 if __name__ == "__main__":
     app.run(debug=True)

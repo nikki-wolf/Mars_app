@@ -86,25 +86,24 @@ def scrape():
     collapse=soup.find('div', class_='collapsible results')
     hemisphere_titles=[]
     for no,item in enumerate(collapse.find_all('div',class_='item')):
-        #print(item.a['href'].split('/')[-1])
         hemisphere_titles.append(item.a['href'].split('/')[-1])
 
     ## Hemisphere images
     img_base_url='https://astrogeology.usgs.gov/search/map/Mars/Viking/'
-    hemisphere_image_urls ={}
+    hemisphere_title_image =[]
     for no,tk in enumerate(hemisphere_titles):
+        hem_tit_img={}
         #browser = Browser("chrome", **executable_path, headless=False,chrome_options=options)
         browser.visit(img_base_url+tk)
         time.sleep(5)
         html = browser.html
         soup = BeautifulSoup(html, 'html.parser')
-        hemisphere_image_urls.update({f'title{no}':tk,
-                                    f'img_url{no}':soup.find('div',class_='container').\
-                                    find('div',class_='downloads').ul.li.a['href']})
-        #print(soup.find('div',class_='container').\
-        #                            find('div',class_='downloads').ul.li.a['href'])
+        hem_tit_img['title']=tk
+        hem_tit_img['image']=soup.find('div',class_='container').\
+                                    find('div',class_='downloads').ul.li.a['href']
+        hemisphere_title_image.append(hem_tit_img)
         
-    data.update({'MARS_HEMISPHERES':hemisphere_image_urls})
+    data.update({'MARS_HEMISPHERES_IMG':hemisphere_title_image})
 
     # Close the browser after scraping
     browser.quit()
