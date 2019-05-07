@@ -6,10 +6,8 @@ from pymongo import MongoClient
 
 connection = MongoClient('localhost', 27017) #Connect to mongodb
 db = connection['Mars_app'] 
-
-#db.collection.delete_many({})
-#db.collection.insert_one(data)
-#if "Mars" in db.list_collection_names:
+# we check if there is a record in the collection of the Mars_app database consisting of Mars data to be used by the app. 
+# if not, we add the record to the database (scraping the webpages and export the result as a dictionary).
 collection = db['Mars_data']
 if collection.count() == 0:
     print("First time inserting data into the empty Mongodb Mars database!")
