@@ -4,53 +4,55 @@
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-  <title>Mars Weather</title>
+  <title>Mars Hemispheres</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" href="static/style.css">
   <link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet">
   <script async="" src="https://cdn.carbonads.com/carbon.js?serve=CKYIKKJL&amp;placement=getbootstrapcom" id="_carbonads_js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 </head>
-
 <body class=bodyBGC> <!-- main body with specified background color-->
   <div class="container-fluid">
     <nav class=" navbar navbar-expand-lg navbar-light" >
-        <div class="container-fluid">
-          <a class="navbar-brand" href="/" ><Strong>Summary</Strong></a>
-
-          <a class="navbar-brand" href="/scrape" ><Strong>Getting Mars Data</Strong></a>
-        
-          <div class="navbar-nav navbar-right">
-            <ul  class="navbar-nav" >  
-              <li class="nav-item active">
-                  <a class="nav-link" href="/Mars_facts">Mars Facts</a>
-                </li>
-                
-              <li class="nav-item active">
-                <a class="nav-link" href="/Mars_news">Mars News</a>
-              </li>
-                
-              <li class="nav-item active">
-                <a class="nav-link" href="/Mars_weather">Mars Weather</a>
-              </li>
-
-              <li class="nav-item active">
-                  <a class="nav-link" href="/Mars_hemispheres">Mars Hemispheres</a>
-              </li>
-  
-            </ul>
-          </div> <!--navbar-nav navbar-right-->
-        </div> <!--container-fluid-->
-      </nav>
-    <div class="content">
       <div class="container-fluid">
-        <div class= "row">
-          <h2>Current weather on Mars</h2>
-        </div>
-        <img id="landingimage" src={{Mars.JPL_MARS_SPACE_IMAGE}} alt="Mars Featured Image" class=photos></a>
-        <div class= "row">
-          <!-- <h3>Current weather on Mars</h3> -->
-          <p>{{Mars.MARS_WEATHER}}</p>
+        <a class="navbar-brand" href="/" ><Strong>Summary</Strong></a>
+
+        <a class="navbar-brand" href="/scrape" ><Strong>Getting Mars Data</Strong></a>
+      
+        <div class="navbar-nav navbar-right">
+          <ul  class="navbar-nav" >  
+            <li class="nav-item active">
+                <a class="nav-link" href="/Mars_facts">Mars Facts</a>
+              </li>
+              
+            <li class="nav-item active">
+              <a class="nav-link" href="/Mars_news">Mars News</a>
+            </li>
+              
+            <li class="nav-item active">
+              <a class="nav-link" href="/Mars_weather">Mars Weather</a>
+            </li>
+
+            <li class="nav-item active">
+              <a class="nav-link" href="/Mars_hemispheres">Mars Hemispheres</a>
+            </li>
+
+          </ul>
+        </div> <!--navbar-nav navbar-right-->
+      </div> <!--container-fluid-->
+    </nav>
+    <div class="container">
+      <div class=box>
+          <div class="row">
+            {% for item in Mars %}
+              <div class="col-md-5 pad top"> 
+                  <h3> {{ item['title']  }}</h3>
+                  <a target="blank" href="{{item['image']}}">
+                      <img src="{{item['image']}}" alt="Hemisphere_img" class="photos"></a>
+                  <br></br>
+              </div>
+            {% endfor %}
+          </div>
         </div>
       </div>
     </div>
